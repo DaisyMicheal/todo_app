@@ -20,7 +20,7 @@ Ensure you have Flutter installed. For installation instructions, visit Flutter.
 
 # Installation
 Clone the repository:
-git clone https://github.com/your_username/todolist_app.git
+git clone https://github.com/DaisyMicheal/todo_app.git
 
 Navigate into the project directory:
 cd todolist_app
