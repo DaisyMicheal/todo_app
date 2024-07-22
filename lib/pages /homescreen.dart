@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../controller/font_controller.dart';
 import '../controller/theme_controller.dart';
-import '../models/task.dart' as models; // Alias this import
+import '../models/task.dart' as models;
 import 'create_task_screen.dart';
 import 'setting_screen.dart';
 
@@ -57,10 +57,10 @@ class _TodoHomepageState extends State<TodoHomepage> {
       MaterialPageRoute(
         builder: (context) => CreateTaskScreen(
           onAddTask: (category, title, dateTimeStr, color) {
-            DateTime dateTime = DateTime.parse(dateTimeStr as String); // Adjust parsing based on your date format
+            DateTime dateTime = DateTime.parse(dateTimeStr as String);
             _editTask(index, title, category, dateTime, color);
           },
-          existingTask: task.toMap(), // Pass existing task details for editing
+          existingTask: task.toMap(),
         ),
       ),
     );
@@ -99,7 +99,7 @@ class _TodoHomepageState extends State<TodoHomepage> {
               color: themeController.isDarkMode ? Colors.white : Colors.black,
             ),
             onPressed: () {
-              // Handle notification icon press
+
             },
           ),
         ],
@@ -185,7 +185,7 @@ class _TodoHomepageState extends State<TodoHomepage> {
       case 2:
         return _buildSettingsSection(themeController, fontSizeController);
       default:
-        return Container(); // Handle default case or throw an error
+        return Container();
     }
   }
 

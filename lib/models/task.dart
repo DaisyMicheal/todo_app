@@ -41,7 +41,7 @@ class Task {
       'title': title,
       'category': category,
       'dateTime': dateTime.toIso8601String(),
-      'color': color.value, // Store color as int value
+      'color': color.value,
       'completed': completed,
     };
   }

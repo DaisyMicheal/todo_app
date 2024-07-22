@@ -3,9 +3,8 @@ import 'controller/font_controller.dart';
 import 'controller/theme_controller.dart';
 import 'pages /homescreen.dart';
 import 'package:provider/provider.dart';
-
 import 'pages /list_screen.dart';
-import 'pages /splash.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -17,16 +16,16 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ThemeController()),
-        ChangeNotifierProvider(create: (context) => FontSizeController(14.0)), // Provide FontSizeController
+        ChangeNotifierProvider(create: (context) => FontSizeController(14.0)),
       ],
       child: Consumer2<ThemeController, FontSizeController>(
         builder: (context, themeController, fontSizeController, child) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false, // Add this line to hide the debug banner
+            debugShowCheckedModeBanner: false,
             theme: ThemeData(
               brightness: themeController.isDarkMode ? Brightness.dark : Brightness.light,
               textTheme: TextTheme(
-                bodyMedium: TextStyle(fontSize: fontSizeController.fontSize), // Use FontSizeController
+                bodyMedium: TextStyle(fontSize: fontSizeController.fontSize),
               ),
             ),
             home: TodoHomepage(),
